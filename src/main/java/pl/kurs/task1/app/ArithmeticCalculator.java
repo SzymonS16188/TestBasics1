@@ -11,10 +11,11 @@ public class ArithmeticCalculator {
         String input = scanner.nextLine();
         scanner.close();
 
-        if (input.isEmpty()) {
+        if (input.isBlank()) {
             System.out.println("Podano niewłaściwe dane.");
             return;
         }
+
 
         String[] elements = input.trim().split(" ");
 
