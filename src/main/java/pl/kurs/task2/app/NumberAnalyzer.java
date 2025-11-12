@@ -51,7 +51,7 @@ public class NumberAnalyzer {
             median = numbers[numbers.length / 2];
         } else {
             int middleNumber = numbers.length / 2; // rozwiązanie dla parzystej ilosci liczb
-            median = (numbers[middleNumber - 1] + numbers[middleNumber]) / 2;
+            median = (numbers[middleNumber - 1] + numbers[middleNumber]) / 2.0;
         }
 
         System.out.println("Mediana wprowadzonych liczb to: " + median);
@@ -68,8 +68,9 @@ public class NumberAnalyzer {
     }
 
     public static int numberOfDivisors(int n) {
+        if (n <= 0) return 0;
         int counter = 0;
-        for (int i = 1; i < n; i++) { // sprawdzanie liczb od 1 do n
+        for (int i = 1; i <= n; i++) { // sprawdzanie liczb od 1 do n
             if (n % i == 0) counter++;
         }
         return counter;

@@ -6,11 +6,6 @@ import java.util.Scanner;
 public class MatrixMultiplication {
     public static void main(String[] args) {
 
-        /// Poproś użytkownika o podanie dwóch macierzy (tablic dwuwymiarowych)
-        /// wypisz tablice ktora będzie efektem pomnozenia tych dwoch tablic przez siebie.
-        /// (klasyczne mnozenia macierzy)
-        /// Uwaga: jesli uzytkownik poda macierze których nie da się pomnożyć należy wypisać komunikat:
-        /// "Tych macierzy nie da sie pomnożyć"
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj liczbe wierszy macierzy A: ");
@@ -26,11 +21,11 @@ public class MatrixMultiplication {
         int columnB = scanner.nextInt();
 
 
-        if (columnA != rowB) {
-            System.out.println("Tych macierzy nie da sie pomnożyć.");
-            return;
-        } else if (rowA <= 0 || columnA <= 0 || rowB <= 0 || columnB <= 0) {
+        if (rowA <= 0 || columnA <= 0 || rowB <= 0 || columnB <= 0) {
             System.out.println("Podano niewłaściwe dane.");
+            return;
+        } else if (columnA != rowB) {
+            System.out.println("Tych macierzy nie da sie pomnożyć.");
             return;
         }
 
@@ -65,12 +60,11 @@ public class MatrixMultiplication {
             }
         }
 
-        System.out.println(Arrays.deepToString(resultMatrix));
+        //System.out.println(Arrays.deepToString(resultMatrix));
 
         for (int i = 0; i < resultMatrix.length; i++) {
             System.out.println(Arrays.toString(resultMatrix[i]));
         }
-
 
         scanner.close();
     }

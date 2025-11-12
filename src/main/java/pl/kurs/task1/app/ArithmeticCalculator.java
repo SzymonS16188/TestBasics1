@@ -21,6 +21,7 @@ public class ArithmeticCalculator {
 
         if (elements.length < 3 || elements.length % 2 == 0) {
             System.out.println("Podano niewłaściwe dane.");
+            return;
         }
 
 
